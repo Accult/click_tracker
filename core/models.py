@@ -8,3 +8,10 @@ class UserData(models.Model):
 
     def __str__(self):
         return self.ip
+
+
+class RedirectData(models.Model):
+    url = models.URLField()
+
+    def __str__(self):
+        return self.url

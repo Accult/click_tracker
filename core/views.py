@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import View, TemplateView
-from core.models import UserData
+from core.models import UserData, RedirectData
 
 
 class StartPageView(View):
@@ -12,7 +12,11 @@ class StartPageView(View):
 
         UserData.objects.create(ip=ip_address, browser=user_agent)
 
-        return redirect("hi_there")
+        last_redirect = RedirectData.objects.last()
+        if last_redirect:
+            return redirect(last_redirect.url)
+        else:
+            return redirect("hi_there")
 
     def get(self, request, *args, **kwargs):
         return render(request, "start_page.html")

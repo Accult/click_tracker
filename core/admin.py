@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.models import Group
-from core.models import UserData
+from core.models import UserData, RedirectData
 
 
 class UserDataAdmin(admin.ModelAdmin):
@@ -9,3 +9,4 @@ class UserDataAdmin(admin.ModelAdmin):
 
 admin.site.unregister(Group)
 admin.site.register(UserData, UserDataAdmin)
+admin.site.register(RedirectData)
