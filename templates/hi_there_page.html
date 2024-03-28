@@ -7,6 +7,12 @@
 </head>
 <body>
     <h1>Hi There!</h1>
-    <p>Thank you for clicking!</p>
+    <p>Thank you for clicking! Сatch a random quote 🙃</p>
+    {% if quote %}
+    <blockquote>
+        <p>{{ quote }}</p>
+        <footer>{{ author }}</footer>
+    </blockquote>
+    {% endif %}
 </body>
 </html>

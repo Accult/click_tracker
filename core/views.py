@@ -1,3 +1,4 @@
+import requests
 from django.shortcuts import render, redirect
 from django.views.generic import View, TemplateView
 from core.models import UserData, RedirectData
@@ -24,3 +25,17 @@ class StartPageView(View):
 
 class HiTherePageView(TemplateView):
     template_name = "hi_there_page.html"
+    api_url = "https://api.api-ninjas.com/v1/quotes?category=life"
+    api_key = "13Tk+3CNA6xWEgzTjJhK1A==smXxx6lYODJKCD8p"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        headers = {"X-Api-Key": self.api_key}
+        response = requests.get(self.api_url, headers=headers)
+        if response.status_code == requests.codes.ok:
+            quotes = response.json()
+            if quotes:
+                quote = quotes[0]
+                context["quote"] = quote["quote"]
+                context["author"] = quote["author"]
+        return context
