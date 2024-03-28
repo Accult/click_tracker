@@ -57,4 +57,4 @@ To get started with Click Tracker, follow these steps:
 
 You can view user data by accessing the admin panel at `/admin`.
 
-Enjoy tracking user clicks with Click Tracker! 🚀
+Enjoy! 🚀

@@ -7,4 +7,4 @@ class UserData(models.Model):
     click_time = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"IP: {self.ip}, Browser: {self.browser}, Click Time: {self.click_time}"
+        return self.ip
