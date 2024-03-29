@@ -57,4 +57,5 @@ To get started with Click Tracker, follow these steps:
 
 You can view user data by accessing the admin panel at `/admin`.
 Also, on the /admin page, in the RedirectData section, you can specify the url for redirection, the one that was saved last will be relevant
+
 Enjoy! 🚀
